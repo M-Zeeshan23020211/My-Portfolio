@@ -6,27 +6,13 @@
 <title>Data Scientist Portfolio</title>
 <meta name="description" content="Data scientist portfolio — projects, skills, and services.">
 
-<!-- ================================================================
-     FONTS
-     ================================================================ -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-/* =====================================================================
-   HOW TO EDIT THIS SITE
-   -------------------------------------------------------------------
-   1. All your content (name, links, skills, projects, contact info)
-      lives in ONE place: the CONFIG object near the top of the
-      <script> tag at the bottom of this file. Change the text there —
-      you never need to touch the HTML or CSS to update content.
-   2. To change your photo: set CONFIG.photo to an image URL, or a
-      local filename (e.g. "me.jpg") placed next to this HTML file.
-      If left empty, your initials are shown instead.
-   3. To change colors/fonts, edit the CSS variables in :root below.
-   4. Full guide is repeated at the end of this file in comments.
-   ===================================================================== */
+
 
 :root{
   --bg: #0b0e1f;
@@ -82,13 +68,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   outline-offset: 3px;
 }
 
-/* background canvas (subtle data-point field) */
+
 #bg-canvas{
   position: fixed; inset:0; width:100%; height:100%;
   z-index: 0; opacity: 0.55; pointer-events:none;
 }
 
-/* scroll progress bar */
+
 #scroll-progress{
   position: fixed; top:0; left:0; height:3px; width:0%;
   background: linear-gradient(90deg, var(--teal), var(--violet), var(--amber));
@@ -365,7 +351,7 @@ footer a:hover{ color: var(--teal); }
 <canvas id="bg-canvas"></canvas>
 
 <nav id="navbar">
-  <a href="#hero" class="logo"><span class="dot">&gt;</span>_portfolio</a>
+  <a href="#hero" class="logo"><span class="dot">&gt;</span></a>
   <div class="nav-links" id="navLinks">
     <a href="#skills">skills</a>
     <a href="#projects">projects</a>
@@ -388,7 +374,7 @@ footer a:hover{ color: var(--teal); }
 
   <!-- HERO -->
   <section id="hero" class="cell" data-cell="1">
-    <div class="cell-head">In&nbsp;[1]: <span class="cell-comment"># initialize_profile()</span><span class="rule"></span></div>
+    <div class="cell-head"> <span class="cell-comment"></span><span class="rule"></span></div>
     <div class="hero-grid">
       <div class="hero-photo" id="heroPhotoWrap"></div>
       <div class="hero-text">
@@ -403,24 +389,24 @@ footer a:hover{ color: var(--teal); }
         <div class="hero-socials" id="heroSocials"></div>
       </div>
     </div>
-    <div class="cell-out">Out[1]: <span id="heroLocation"></span></div>
+    <div class="cell-out"> <span id="heroLocation"></span></div>
   </section>
 
   <!-- SKILLS -->
   <section id="skills" class="cell" data-cell="2">
-    <div class="cell-head">In&nbsp;[2]: <span class="cell-comment"># list(skills)</span><span class="rule"></span></div>
-    <h2 class="section-title">Skills &amp; tools</h2>
+    <div class="cell-head"><span class="cell-comment"></span><span class="rule"></span></div>
+    <h2 class="section-title">Skills </h2>
     <p class="section-sub">The languages, frameworks, and platforms I use to move from raw data to shipped models.</p>
     <div class="skills-grid" id="skillsGrid"></div>
   </section>
 
   <!-- PROJECTS -->
   <section id="projects" class="cell" data-cell="3">
-    <div class="cell-head">In&nbsp;[3]: <span class="cell-comment"># sorted(projects, key='impact')</span><span class="rule"></span></div>
+    <div class="cell-head"> <span class="cell-comment"></span><span class="rule"></span></div>
     <h2 class="section-title">Selected projects</h2>
     <p class="section-sub">A mix of applied ML, analytics, and open-source work.</p>
     <div class="projects-grid" id="projectsGrid"></div>
-    <div class="cell-out">Out[3]: 6 projects loaded &middot; <a href="https://github.com" id="moreProjectsLink" target="_blank" rel="noopener" style="color:var(--teal)">see all on GitHub &rarr;</a></div>
+    <div class="cell-out"> <a href="https://github.com" id="moreProjectsLink" target="_blank" rel="noopener" style="color:var(--teal)">see all on GitHub &rarr;</a></div>
   </section>
 
 
@@ -447,8 +433,7 @@ const CONFIG = {
   tagline: "I help teams turn raw, messy data into models and dashboards people actually trust — from exploratory analysis to production-grade ML pipelines.",
   location: "Based in London, UK · Open to remote work",
 
-  // Leave photo empty ("") to show your initials instead of a picture.
-  // Otherwise put an image URL, or a filename sitting next to this HTML file.
+  // Photolink
   photo: "IMG-20260419-WA0004.jpg",
 
   resumeUrl: "Zeeshan _DataScience.pdf", // link to your resume PDF
@@ -465,8 +450,8 @@ const CONFIG = {
   skills: {
     "Languages": ["Python", "SQL", "Bash", "Excel"],
     "ML & Deep Learning": ["scikit-learn","TensorFlow"],
-    "Data & Pipelines": ["Pandas", "Spark", "Airflow", "dbt", "PostgreSQL"],
-    "MLOps & Cloud": ["Docker", "AWS", "GCP", "MLflow", "FastAPI"],
+    "Data & Pipelines": ["Pandas", "PostgreSQL"],
+    "Still Learning": ["Docker", "AWS", "GCP", "MLflow", "FastAPI"],
     "Visualization": ["Matplotlib", "Plotly", "Power BI", "Seaborn"]
   },
 
@@ -764,40 +749,5 @@ document.querySelectorAll('.project-thumb canvas').forEach(cv=>{
 });
 </script>
 
-<!-- =========================================================================
-     FULL EDITING GUIDE
-     -------------------------------------------------------------------------
-     This entire site is ONE file. Open it in any text editor (VS Code,
-     Notepad, Sublime...) and search for "const CONFIG" — everything you'll
-     usually want to change lives inside that object:
-
-       name, role, typedRoles   -> your name & rotating headline phrases
-       tagline, location        -> hero subtext
-       photo                    -> "" for initials, or a URL / local filename
-       resumeUrl                -> link to your résumé PDF
-       email                    -> your contact email
-       socials                  -> array of {name, icon, url}
-                                    supported icons: github, kaggle, linkedin,
-                                    twitter, mail (unlisted icons show as a
-                                    small text badge automatically)
-       skills                   -> object of { "Group Name": ["Skill", ...] }
-       projects                 -> array of {title, desc, tags[], github, demo, kaggle}
-                                    leave demo/kaggle as "" to hide that link
-       githubProfile            -> used by the "see all on GitHub" link
-
-     To use your own photo:
-       1. Put the image file (e.g. me.jpg) in the same folder as this HTML file.
-       2. Set  photo: "me.jpg"  in CONFIG.
-       (You can also use any hosted image URL instead.)
-
-     To change colors or fonts:
-       Scroll to the ":root { ... }" block near the top of the <style> tag.
-       --amber and --teal are the two accent colors; --bg is the page
-       background. Swap the Google Fonts <link> in <head> to change typefaces.
-
-     Direct contact links (email, GitHub, LinkedIn, etc.) are built from
-     CONFIG.socials and CONFIG.email and shown as icons in the nav, hero,
-     and footer — no separate contact section, form, or backend needed.
-     ========================================================================= -->
 </body>
 </html>
